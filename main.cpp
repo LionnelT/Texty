@@ -8,4 +8,5 @@ int main(int argc, char *argv[])
   Texty w;
   w.show();
   return a.exec();
+  //what
 }
