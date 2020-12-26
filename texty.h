@@ -15,6 +15,9 @@ public:
   Texty(QWidget *parent = nullptr);
   ~Texty();
 
+private slots:
+  void on_actionExit_triggered();
+
 private:
   Ui::Texty *ui;
 };

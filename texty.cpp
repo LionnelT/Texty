@@ -13,3 +13,8 @@ Texty::~Texty()
   delete ui;
 }
 
+
+void Texty::on_actionExit_triggered()
+{
+    qApp->quit();
+}
