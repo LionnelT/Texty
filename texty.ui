@@ -16,7 +16,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTextEdit" name="textEdit"/>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -33,10 +37,12 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="newDoc"/>
+    <addaction name="OpenDocument"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
-    <addaction name="actionSave_As_2"/>
     <addaction name="actionExit"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuUpload">
     <property name="title">
@@ -55,32 +61,37 @@
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionSave">
+  <action name="newDoc">
    <property name="text">
-    <string>Open</string>
+    <string>New Document</string>
    </property>
    <property name="shortcut">
     <string>CapsLock, F</string>
    </property>
   </action>
-  <action name="actionSave_As">
+  <action name="OpenDocument">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
    <property name="text">
     <string>Save</string>
    </property>
   </action>
-  <action name="actionSave_As_2">
+  <action name="actionSave_As">
    <property name="text">
-    <string>Save_As</string>
-   </property>
-  </action>
-  <action name="actionExit">
-   <property name="text">
-    <string>Exit</string>
+    <string>Save As</string>
    </property>
   </action>
   <action name="actionGmail">
    <property name="text">
     <string>Gmail</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>
