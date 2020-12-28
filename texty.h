@@ -18,7 +18,17 @@ public:
 private slots:
   void on_actionExit_triggered();
 
+  void on_actionSave_As_triggered();
+  void saveFile();
+
+  void on_actionSave_triggered();
+
+  void on_newDoc_triggered();
+
+  void on_OpenDocument_triggered();
+
 private:
   Ui::Texty *ui;
+  QString currentFile;
 };
 #endif // TEXTY_H
