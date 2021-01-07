@@ -1,2 +1,2 @@
 # Texty
-Text Editer
+Text Editor
