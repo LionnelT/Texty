@@ -27,6 +27,10 @@ private slots:
 
   void on_OpenDocument_triggered();
 
+  void on_actionGmail_triggered();
+
+  void on_actionAuthors_triggered();
+
 private:
   Ui::Texty *ui;
   QString currentFile;
