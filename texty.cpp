@@ -1,9 +1,12 @@
 #include "texty.h"
+#include "about.h"
 #include "ui_texty.h"
 #include <QFileDialog>
 #include <QString>
 #include <QDebug>
 #include <QMessageBox>
+#include <QDesktopServices>
+#include <QUrl>
 Texty::Texty(QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::Texty)
@@ -25,7 +28,7 @@ void Texty::on_actionExit_triggered()
 
 void Texty::on_actionSave_As_triggered()
 {
-
+  saveFile();
 }
 
 void Texty::saveFile()
@@ -79,4 +82,16 @@ void Texty::on_OpenDocument_triggered()
   QString text = in.readAll();
   ui->textEdit->setText(text);
   file.close();
+}
+
+void Texty::on_actionGmail_triggered()
+{
+    QDesktopServices::openUrl(QUrl("https://mail.google.com/mail/u/0/#inbox?compose=new"));
+}
+
+void Texty::on_actionAuthors_triggered()
+{
+
+  about *hel = new about();;
+  hel->show();
 }

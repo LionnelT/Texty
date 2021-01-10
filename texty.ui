@@ -55,6 +55,7 @@
     <property name="title">
      <string>About</string>
     </property>
+    <addaction name="actionAuthors"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuUpload"/>
@@ -62,6 +63,11 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="newDoc">
+   <property name="icon">
+    <iconset>
+     <normalon>../../../usr/share/icons/Yaru/64x64/legacy/document-new.svg</normalon>
+    </iconset>
+   </property>
    <property name="text">
     <string>New Document</string>
    </property>
@@ -90,8 +96,17 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Qt/Examples/Qt-5.15.2/network/torrent/icons/exit.png</normaloff>../Qt/Examples/Qt-5.15.2/network/torrent/icons/exit.png</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAuthors">
+   <property name="text">
+    <string>Authors </string>
    </property>
   </action>
  </widget>
