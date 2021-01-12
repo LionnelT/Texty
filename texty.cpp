@@ -30,7 +30,11 @@ void Texty::on_actionSave_As_triggered()
 {
   saveFile();
 }
-
+void Texty::clearScreen()
+{
+  currentFile.clear();
+  ui->textEdit->setText(QString());
+}
 void Texty::saveFile()
 {
   QString fname;
@@ -63,8 +67,32 @@ void Texty::on_actionSave_triggered()
 
 void Texty::on_newDoc_triggered()
 {
-  currentFile.clear();
-  ui->textEdit->setText(QString());
+  if(ui->textEdit->document()->isEmpty())
+    {
+      clearScreen();
+
+    }
+  else
+    {
+      QMessageBox msgBox;
+      msgBox.setText("Do you want to save the document first ?");
+      msgBox.setStandardButtons(QMessageBox::Save| QMessageBox:: Discard | QMessageBox :: Cancel);
+      msgBox.setDefaultButton(QMessageBox::Save);
+     int ret = msgBox.exec();
+
+     switch(ret){
+       case QMessageBox::Save:
+       saveFile();
+       break;
+
+       case QMessageBox::Discard:
+         clearScreen();
+         break;
+
+       }
+
+    }
+
 
 }
 

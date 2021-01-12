@@ -20,7 +20,7 @@ private slots:
 
   void on_actionSave_As_triggered();
   void saveFile();
-
+  void clearScreen();
   void on_actionSave_triggered();
 
   void on_newDoc_triggered();
