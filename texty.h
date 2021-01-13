@@ -31,6 +31,8 @@ private slots:
 
   void on_actionAuthors_triggered();
 
+  void closeEvent(QCloseEvent *event);
+
 private:
   Ui::Texty *ui;
   QString currentFile;

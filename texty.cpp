@@ -7,13 +7,14 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QCloseEvent>
 Texty::Texty(QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::Texty)
 {
   ui->setupUi(this);
   this->setCentralWidget(ui->textEdit);
-}
+  }
 
 Texty::~Texty()
 {
@@ -122,4 +123,32 @@ void Texty::on_actionAuthors_triggered()
 
   about *hel = new about();;
   hel->show();
+}
+
+void Texty::closeEvent(QCloseEvent *event)
+{
+  if(ui->textEdit->document()->isEmpty())
+    {
+      clearScreen();
+
+    }
+  else
+    {
+      QMessageBox msgBox;
+      msgBox.setText("Do you want to save the document first, before you close ?");
+      msgBox.setStandardButtons(QMessageBox::Save| QMessageBox:: Discard | QMessageBox :: Cancel);
+      msgBox.setDefaultButton(QMessageBox::Save);
+     int resBtn = msgBox.exec();
+
+     if(resBtn==QMessageBox::Save){
+       saveFile();
+       event->accept();
+       }
+     else if(resBtn==QMessageBox::Discard)
+       event->accept();
+     else
+       event->ignore();
+
+    }
+
 }
