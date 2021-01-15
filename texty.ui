@@ -127,6 +127,7 @@
  <resources>
   <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
   <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
+  <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
  </resources>
  <connections/>
 </ui>

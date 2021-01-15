@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QStatusBar>
 #include <QCloseEvent>
 Texty::Texty(QWidget *parent)
   : QMainWindow(parent)
@@ -14,6 +15,9 @@ Texty::Texty(QWidget *parent)
 {
   ui->setupUi(this);
   this->setCentralWidget(ui->textEdit);
+  QStatusBar *bar = new QStatusBar(this); // created a new status bar object
+  ui->statusbar->addWidget(bar);
+  bar->showMessage(tr("Ready"));
   }
 
 Texty::~Texty()
@@ -135,6 +139,9 @@ void Texty::closeEvent(QCloseEvent *event)
   else
     {
       QMessageBox msgBox;
+      msgBox.move(3400,100);
+      msgBox.setIcon(QMessageBox::Warning);
+
       msgBox.setText("Do you want to save the document first, before you close ?");
       msgBox.setStandardButtons(QMessageBox::Save| QMessageBox:: Discard | QMessageBox :: Cancel);
       msgBox.setDefaultButton(QMessageBox::Save);
@@ -151,4 +158,21 @@ void Texty::closeEvent(QCloseEvent *event)
 
     }
 
+}
+int Texty::textChanged()
+{
+   int  wordCount =  ui->textEdit->toPlainText().split(QRegExp("(\\s|\\n|\\r)+"),QString::SkipEmptyParts).count();
+
+
+   return wordCount;
+}
+
+
+
+void Texty::on_textEdit_textChanged()
+{
+  QStatusBar *bar = new QStatusBar(); // created a new status bar object
+  ui->statusbar->addPermanentWidget(bar);
+  bar->showMessage("");
+  bar->showMessage(QString::number(textChanged()));
 }
