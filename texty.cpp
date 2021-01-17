@@ -16,7 +16,8 @@ Texty::Texty(QWidget *parent)
   ui->setupUi(this);
   this->setCentralWidget(ui->textEdit);
   QStatusBar *bar = new QStatusBar(this); // created a new status bar object
-  ui->statusbar->addWidget(bar);
+  bar->(Qt::AlignLeft);// trying to aligh Readdy
+  ui->statusbar->addPermanentWidget(bar);
   bar->showMessage(tr("Ready"));
   }
 
@@ -171,8 +172,6 @@ int Texty::textChanged()
 
 void Texty::on_textEdit_textChanged()
 {
-  QStatusBar *bar = new QStatusBar(); // created a new status bar object
-  ui->statusbar->addPermanentWidget(bar);
-  bar->showMessage("");
-  bar->showMessage(QString::number(textChanged()));
+
+  ui->statusbar->showMessage(QString("Words : %1").arg(textChanged()));
 }
