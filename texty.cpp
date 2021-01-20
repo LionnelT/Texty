@@ -8,6 +8,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QStatusBar>
+#include <QLabel>
 #include <QCloseEvent>
 Texty::Texty(QWidget *parent)
   : QMainWindow(parent)
@@ -15,10 +16,9 @@ Texty::Texty(QWidget *parent)
 {
   ui->setupUi(this);
   this->setCentralWidget(ui->textEdit);
-  QStatusBar *bar = new QStatusBar(this); // created a new status bar object
-  bar->(Qt::AlignLeft);// trying to aligh Readdy
+  QLabel *bar = new QLabel("Ready"); // created a new status bar object
+  bar->setAlignment(Qt::AlignLeft);// trying to aligh Readdy
   ui->statusbar->addPermanentWidget(bar);
-  bar->showMessage(tr("Ready"));
   }
 
 Texty::~Texty()

@@ -16,8 +16,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>0</y>
+     <x>230</x>
+     <y>10</y>
      <width>201</width>
      <height>111</height>
     </rect>
@@ -39,7 +39,29 @@
     <string>Close</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>10</y>
+     <width>211</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/4ad1a192-2a60-4bbf-9167-d61286fc246f_200x200 (1).png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../Downloads/2521473-folder/png/Images.qrc">:/4ad1a192-2a60-4bbf-9167-d61286fc246f_200x200 (1).png</pixmap>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
+  <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
+ </resources>
  <connections/>
 </ui>
