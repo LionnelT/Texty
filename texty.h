@@ -30,6 +30,11 @@ private slots:
   void on_actionGmail_triggered();
 
   void on_actionAuthors_triggered();
+  int textChanged();
+
+  void closeEvent(QCloseEvent *event);
+
+  void on_textEdit_textChanged();
 
 private:
   Ui::Texty *ui;

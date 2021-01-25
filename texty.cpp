@@ -7,13 +7,19 @@
 #include <QMessageBox>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QStatusBar>
+#include <QLabel>
+#include <QCloseEvent>
 Texty::Texty(QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::Texty)
 {
   ui->setupUi(this);
   this->setCentralWidget(ui->textEdit);
-}
+  QLabel *bar = new QLabel("Ready"); // created a new status bar object
+  bar->setAlignment(Qt::AlignLeft);// trying to aligh Readdy
+  ui->statusbar->addPermanentWidget(bar);
+  }
 
 Texty::~Texty()
 {
@@ -122,4 +128,50 @@ void Texty::on_actionAuthors_triggered()
 
   about *hel = new about();;
   hel->show();
+}
+
+void Texty::closeEvent(QCloseEvent *event)
+{
+  if(ui->textEdit->document()->isEmpty())
+    {
+      clearScreen();
+
+    }
+  else
+    {
+      QMessageBox msgBox;
+      msgBox.move(3400,100);
+      msgBox.setIcon(QMessageBox::Warning);
+
+      msgBox.setText("Do you want to save the document first, before you close ?");
+      msgBox.setStandardButtons(QMessageBox::Save| QMessageBox:: Discard | QMessageBox :: Cancel);
+      msgBox.setDefaultButton(QMessageBox::Save);
+     int resBtn = msgBox.exec();
+
+     if(resBtn==QMessageBox::Save){
+       saveFile();
+       event->accept();
+       }
+     else if(resBtn==QMessageBox::Discard)
+       event->accept();
+     else
+       event->ignore();
+
+    }
+
+}
+int Texty::textChanged()
+{
+   int  wordCount =  ui->textEdit->toPlainText().split(QRegExp("(\\s|\\n|\\r)+"),QString::SkipEmptyParts).count();
+
+
+   return wordCount;
+}
+
+
+
+void Texty::on_textEdit_textChanged()
+{
+
+  ui->statusbar->showMessage(QString("Words : %1").arg(textChanged()));
 }

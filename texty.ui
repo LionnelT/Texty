@@ -64,9 +64,9 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="newDoc">
    <property name="icon">
-    <iconset>
-     <normaloff>../../Downloads/2521473-folder/png/002-folder.png</normaloff>
-     <normalon>../../../usr/share/icons/Yaru/64x64/legacy/document-new.svg</normalon>../../Downloads/2521473-folder/png/002-folder.png</iconset>
+    <iconset theme="lon" resource="../../Downloads/2521473-folder/png/Images.qrc">
+     <normaloff>:/002-folder.png</normaloff>
+     <normalon>../../../usr/share/icons/Yaru/64x64/legacy/document-new.svg</normalon>:/002-folder.png</iconset>
    </property>
    <property name="text">
     <string>New Document</string>
@@ -74,9 +74,9 @@
   </action>
   <action name="OpenDocument">
    <property name="icon">
-    <iconset>
-     <normalon>../../Downloads/2521473-folder/png/001-folder.png</normalon>
-    </iconset>
+    <iconset resource="../../Downloads/2521473-folder/png/Images.qrc">
+     <normaloff>:/001-folder.png</normaloff>
+     <normalon>../../Downloads/2521473-folder/png/001-folder.png</normalon>:/001-folder.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -84,8 +84,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset>
-     <normaloff>../../Downloads/2521473-folder/png/035-folder.png</normaloff>../../Downloads/2521473-folder/png/035-folder.png</iconset>
+    <iconset resource="../../Downloads/2521473-folder/png/Images.qrc">
+     <normaloff>:/035-folder.png</normaloff>:/035-folder.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -93,8 +93,8 @@
   </action>
   <action name="actionSave_As">
    <property name="icon">
-    <iconset>
-     <normaloff>../../Downloads/2521473-folder/png/037-folder.png</normaloff>../../Downloads/2521473-folder/png/037-folder.png</iconset>
+    <iconset resource="../../Downloads/2521473-folder/png/Images.qrc">
+     <normaloff>:/037-folder.png</normaloff>:/037-folder.png</iconset>
    </property>
    <property name="text">
     <string>Save As</string>
@@ -102,8 +102,8 @@
   </action>
   <action name="actionGmail">
    <property name="icon">
-    <iconset>
-     <normaloff>../../Downloads/2521473-folder/png/032-folder.png</normaloff>../../Downloads/2521473-folder/png/032-folder.png</iconset>
+    <iconset resource="../../Downloads/2521473-folder/png/Images.qrc">
+     <normaloff>:/032-folder.png</normaloff>:/032-folder.png</iconset>
    </property>
    <property name="text">
     <string>Gmail</string>
@@ -124,6 +124,10 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
+  <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
+  <include location="../../Downloads/2521473-folder/png/Images.qrc"/>
+ </resources>
  <connections/>
 </ui>
